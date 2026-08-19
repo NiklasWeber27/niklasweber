@@ -7,12 +7,30 @@
     "stub": "2 Romane — erschienen"
   },
   "quotes": [
-    { "q": "„Ein Überwachungsalbtraum mit WLAN-Anschluss.\"", "attr": "— aus »Digitale Diktatur in Dösendorf«" },
-    { "q": "„War ich der Einzige? Ja.\"", "attr": "— Onkel Harry, »Die Hochzeit«" },
-    { "q": "„Nicht geschönt. Nicht perfekt. Einfach – wie es ist.\"", "attr": "— Lisa Wallner, »Die Hochzeit«" },
-    { "q": "„Ja, war eh super, glaub ich.\"", "attr": "— Thomas Gertl, »Die Hochzeit«" },
-    { "q": "„Die ist fünfundneunzig. In dem Alter macht man nix mehr aus Versehen.\"", "attr": "— Opa Herbert, »Die Hochzeit«" },
-    { "q": "„Eine Dokumentation des schönsten Tages ihres Lebens – und des Tages, der tatsächlich stattgefunden hat.\"", "attr": "— Klappentext, »Die Hochzeit«" }
+    {
+      "q": "„Ein Überwachungsalbtraum mit WLAN-Anschluss.\"",
+      "attr": "— aus »Digitale Diktatur in Dösendorf«"
+    },
+    {
+      "q": "„War ich der Einzige? Ja.\"",
+      "attr": "— Onkel Harry, »Die Hochzeit«"
+    },
+    {
+      "q": "„Nicht geschönt. Nicht perfekt. Einfach – wie es ist.\"",
+      "attr": "— Lisa Wallner, »Die Hochzeit«"
+    },
+    {
+      "q": "„Ja, war eh super, glaub ich.\"",
+      "attr": "— Thomas Gertl, »Die Hochzeit«"
+    },
+    {
+      "q": "„Die ist fünfundneunzig. In dem Alter macht man nix mehr aus Versehen.\"",
+      "attr": "— Opa Herbert, »Die Hochzeit«"
+    },
+    {
+      "q": "„Eine Dokumentation des schönsten Tages ihres Lebens – und des Tages, der tatsächlich stattgefunden hat.\"",
+      "attr": "— Klappentext, »Die Hochzeit«"
+    }
   ],
   "books": [
     {
@@ -20,9 +38,9 @@
       "navLabel": "Hochzeit",
       "sectionClass": "sec-wine",
       "tag": "Neuestes Buch",
-      "cover": "images/die-hochzeit-cover.png",
       "title": "Die Hochzeit",
       "sub": "Ein Film. Ein Roman.",
+      "cover": "images/die-hochzeit-cover.png",
       "paragraphs": [
         "Ein Samstag im August. Standesamt, Kirche, Location, Heimweg. Kameramann Lukas Berger hat schon viele Hochzeiten gefilmt. Er weiß, wie man unsichtbar wird, wie man wartet, wie man den richtigen Moment erkennt.",
         "Thomas und Lisa wollten etwas Echtes. Dokumentarisch. *Damit wir es unseren Kindern zeigen können*, hat Thomas gesagt. *Den schönsten Tag unseres Lebens.*",
@@ -35,9 +53,9 @@
       "navLabel": "Dösendorf",
       "sectionClass": "sec-navy",
       "tag": "Erster Roman",
-      "cover": "https://niklasweber.carrd.co/assets/images/image01.jpg?v=13c0be07",
       "title": "Digitale Diktatur in Dösendorf",
       "sub": "Ein Heimatroman über Technik, Effizienz und den Mut zum Chaos.",
+      "cover": "https://niklasweber.carrd.co/assets/images/image01.jpg?v=13c0be07",
       "paragraphs": [
         "Willkommen in Dösendorf – einem charmant-verstaubten Nest voller grantiger Eigenbrötler, eigensinniger Bräuche und der besten Käsknödel weit und breit. Doch dann kommt Heidi. Und mit ihr: Digitalisierung. Vernetzung. Effizienz. Ordnung.",
         "Was als Fortschritt gefeiert wird, entpuppt sich bald als Überwachungsalbtraum mit WLAN-Anschluss. Plötzlich zählt nur noch das Optimum – und der Mensch bleibt auf der Strecke. Aber nicht mit Dösendorf.",
@@ -57,7 +75,7 @@
     },
     {
       "tag": "24. März — Lesung",
-      "title": "Lesung in der Sillgasse",
+      "title": "Lesung im BRG Sillgasse",
       "image": "https://niklasweber.carrd.co/assets/images/image03.jpg?v=13c0be07",
       "text": "Am 24. März durfte ich eine Lesung in der Sillgasse halten. Gemeinsam mit den 6. Klassen entstanden spannende Gespräche rund ums Bücherveröffentlichen, darüber, was eigentlich „wirklich österreichisch\" ist, und natürlich auch darüber, wie sich KI sowohl im Alltag als auch in der Kunst auswirkt. Es waren zwei äußerst interessante Stunden – und ich freue mich schon sehr auf die nächste Lesung!",
       "linkText": "→ Zum Bericht",
@@ -77,8 +95,8 @@
   },
   "contact": {
     "text": "Bei Anfragen – Lesungen, Presse oder einfach ein Feedback zum Buch – können Sie sich gerne über E-Mail bei mir melden.",
-    "email": "deine-email-hier@beispiel.at",
-    "note": "Platzhalter — bitte durch deine echte Adresse ersetzen."
+    "email": "niklasweber910@gmail.com",
+    "note": ""
   },
   "footer": {
     "joke": "Analog geschrieben · digital gehostet.",
