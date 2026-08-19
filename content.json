@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "kicker": "Autor · Innsbruck, Tirol",
+    "name1": "Niklas",
+    "name2": "Weber",
+    "subtitle": "Romane mit, von und über Österreich.",
+    "stub": "2 Romane — erschienen"
+  },
+  "quotes": [
+    { "q": "„Ein Überwachungsalbtraum mit WLAN-Anschluss.\"", "attr": "— aus »Digitale Diktatur in Dösendorf«" },
+    { "q": "„War ich der Einzige? Ja.\"", "attr": "— Onkel Harry, »Die Hochzeit«" },
+    { "q": "„Nicht geschönt. Nicht perfekt. Einfach – wie es ist.\"", "attr": "— Lisa Wallner, »Die Hochzeit«" },
+    { "q": "„Ja, war eh super, glaub ich.\"", "attr": "— Thomas Gertl, »Die Hochzeit«" },
+    { "q": "„Die ist fünfundneunzig. In dem Alter macht man nix mehr aus Versehen.\"", "attr": "— Opa Herbert, »Die Hochzeit«" },
+    { "q": "„Eine Dokumentation des schönsten Tages ihres Lebens – und des Tages, der tatsächlich stattgefunden hat.\"", "attr": "— Klappentext, »Die Hochzeit«" }
+  ],
+  "books": [
+    {
+      "id": "hochzeit",
+      "navLabel": "Hochzeit",
+      "sectionClass": "sec-wine",
+      "tag": "Neuestes Buch",
+      "cover": "images/die-hochzeit-cover.png",
+      "title": "Die Hochzeit",
+      "sub": "Ein Film. Ein Roman.",
+      "paragraphs": [
+        "Ein Samstag im August. Standesamt, Kirche, Location, Heimweg. Kameramann Lukas Berger hat schon viele Hochzeiten gefilmt. Er weiß, wie man unsichtbar wird, wie man wartet, wie man den richtigen Moment erkennt.",
+        "Thomas und Lisa wollten etwas Echtes. Dokumentarisch. *Damit wir es unseren Kindern zeigen können*, hat Thomas gesagt. *Den schönsten Tag unseres Lebens.*",
+        "Lukas hat ja gesagt."
+      ],
+      "orderUrl": ""
+    },
+    {
+      "id": "doesendorf",
+      "navLabel": "Dösendorf",
+      "sectionClass": "sec-navy",
+      "tag": "Erster Roman",
+      "cover": "https://niklasweber.carrd.co/assets/images/image01.jpg?v=13c0be07",
+      "title": "Digitale Diktatur in Dösendorf",
+      "sub": "Ein Heimatroman über Technik, Effizienz und den Mut zum Chaos.",
+      "paragraphs": [
+        "Willkommen in Dösendorf – einem charmant-verstaubten Nest voller grantiger Eigenbrötler, eigensinniger Bräuche und der besten Käsknödel weit und breit. Doch dann kommt Heidi. Und mit ihr: Digitalisierung. Vernetzung. Effizienz. Ordnung.",
+        "Was als Fortschritt gefeiert wird, entpuppt sich bald als Überwachungsalbtraum mit WLAN-Anschluss. Plötzlich zählt nur noch das Optimum – und der Mensch bleibt auf der Strecke. Aber nicht mit Dösendorf.",
+        "*Ein anarchisch-warmherziger Roman über smarte Systeme, sture Dorfbewohner und die wunderbare Unordnung des echten Lebens.*"
+      ],
+      "orderUrl": "https://buchshop.bod.de/digitale-diktatur-in-doesendorf-niklas-weber-9783819246449"
+    }
+  ],
+  "press": [
+    {
+      "tag": "Presse",
+      "title": "Buchvorstellung auf meinbezirk.at",
+      "image": "https://niklasweber.carrd.co/assets/images/image04.jpg?v=13c0be07",
+      "text": "Mein Roman wurde auf meinbezirk.at vorgestellt – und ich freue mich riesig darüber! In „Digitale Diktatur in Dösendorf\" treffen eigenwillige Dorfbewohner, österreichische Traditionen und moderne Technologie aufeinander. Im Mittelpunkt steht ein fiktives Dorf, das überraschend viel mit der Realität gemeinsam hat – und die Frage, wie KI unser Leben verändert.",
+      "linkText": "→ Zum Artikel",
+      "linkUrl": "https://www.meinbezirk.at/innsbruck/c-freizeit/eigenwillige-bewohner-und-traditionen-treffen-auf-heidi_a8557606"
+    },
+    {
+      "tag": "24. März — Lesung",
+      "title": "Lesung in der Sillgasse",
+      "image": "https://niklasweber.carrd.co/assets/images/image03.jpg?v=13c0be07",
+      "text": "Am 24. März durfte ich eine Lesung in der Sillgasse halten. Gemeinsam mit den 6. Klassen entstanden spannende Gespräche rund ums Bücherveröffentlichen, darüber, was eigentlich „wirklich österreichisch\" ist, und natürlich auch darüber, wie sich KI sowohl im Alltag als auch in der Kunst auswirkt. Es waren zwei äußerst interessante Stunden – und ich freue mich schon sehr auf die nächste Lesung!",
+      "linkText": "→ Zum Bericht",
+      "linkUrl": "https://bg-sillgasse.tsn.at/news/woche-des-vorlesens"
+    }
+  ],
+  "blog": {
+    "tag": "Zweites Projekt",
+    "title": "Historisch betrachtet kritisch",
+    "text": "Der Versuch, Geschichte unterhaltsam zu erzählen. Nicht vollständig. Nicht objektiv. Aber ehrlich interessiert. Keine wissenschaftlichen Abhandlungen, keine Fußnotenorgien – dafür Humor, Sarkasmus und historische Fehlentscheidungen. Wer alles todernst lesen möchte, ist hier falsch. Alle anderen sind richtig.",
+    "linkText": "→ Zum Blog",
+    "linkUrl": "https://historischbetrachtetschwierig.substack.com/"
+  },
+  "about": {
+    "text": "Ich bin Niklas Weber, geboren 2006 in Innsbruck und Absolvent einer HTL. Meine Geschichten wachsen aus dem Alltag – aus kleinen Beobachtungen, flüchtigen Momenten und leisen Gedanken. Was mir auffällt, findet oft später seinen Platz auf dem Papier. So entstehen Texte, die das Gewöhnliche hinterfragen und das Unscheinbare sichtbar machen.",
+    "sig": "— N. Weber"
+  },
+  "contact": {
+    "text": "Bei Anfragen – Lesungen, Presse oder einfach ein Feedback zum Buch – können Sie sich gerne über E-Mail bei mir melden.",
+    "email": "deine-email-hier@beispiel.at",
+    "note": "Platzhalter — bitte durch deine echte Adresse ersetzen."
+  },
+  "footer": {
+    "joke": "Analog geschrieben · digital gehostet.",
+    "copyright": "© 2026 Niklas Weber. Alle Rechte vorbehalten.",
+    "impressumUrl": "https://niklasweberimpressum.carrd.co/",
+    "datenschutzUrl": "https://niklasweberdatenschutz.carrd.co/"
+  }
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niklas Weber — Inhalte bearbeiten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#d1451c; --navy:#182849; --black:#161109; --cream-ink:#f4ecda;
+    --pink:#e8467d; --wine:#6e1f2a; --gold:#c99a3e;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--cream-ink); color:var(--black); font-family:'IBM Plex Mono', monospace; line-height:1.6; }
+  h1,h2,h3{ margin:0; font-family:'Bebas Neue', sans-serif; text-transform:uppercase; letter-spacing:0.01em; font-weight:400; }
+
+  header{ background:var(--black); color:var(--cream-ink); padding:22px 28px; position:sticky; top:0; z-index:10;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  header h1{ font-size:1.9rem; }
+  header p{ margin:2px 0 0; font-size:0.78rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.06em; }
+  .status{ font-size:0.75rem; color:var(--gold); }
+
+  .wrap{ max-width:840px; margin:0 auto; padding:0 24px 140px; }
+
+  .note{ background:#fff; border:2px solid var(--black); padding:20px 24px; margin:26px 0; font-size:0.92rem; }
+  .note h3{ font-size:1.1rem; margin-bottom:10px; color:var(--wine); }
+  .note ol{ margin:0; padding-left:20px; }
+  .note li{ margin-bottom:6px; }
+  .note code{ background:var(--cream-ink); padding:1px 6px; font-family:'IBM Plex Mono',monospace; font-size:0.85em; border:1px solid var(--black); }
+
+  .block{ margin:40px 0; border-top:3px solid var(--black); padding-top:24px; }
+  .block h2{ font-size:1.7rem; color:var(--wine); }
+  .block .hint{ font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--black); opacity:0.65; margin-bottom:16px; display:block; }
+
+  label{ display:block; font-weight:700; font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; margin:14px 0 6px; }
+  input[type=text], input[type=email], input[type=url], textarea, select{
+    width:100%; font-family:'IBM Plex Mono',monospace; font-size:0.95rem; padding:10px 12px;
+    background:#fff; border:2px solid var(--black); color:var(--black);
+  }
+  textarea{ resize:vertical; min-height:70px; }
+  input:focus, textarea:focus, select:focus{ outline:3px solid var(--gold); outline-offset:0; }
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+  @media (max-width:640px){ .row2, .row3{ grid-template-columns:1fr; } }
+
+  .card-item{ background:#fff; border:2px solid var(--black); padding:18px 18px 8px; margin-bottom:14px; position:relative; }
+  .card-item .remove{
+    position:absolute; top:12px; right:12px; background:var(--black); color:var(--cream-ink); border:none; cursor:pointer;
+    font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:0.68rem; letter-spacing:0.04em; padding:5px 9px; text-transform:uppercase;
+  }
+  .add-btn{
+    font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:0.8rem; letter-spacing:0.03em; text-transform:uppercase;
+    background:var(--orange); color:var(--black); border:2px solid var(--black); padding:10px 18px; cursor:pointer;
+  }
+  .add-btn:hover{ background:var(--gold); }
+
+  .checkbox-row{ display:flex; align-items:center; gap:8px; margin-top:14px; }
+  .checkbox-row input{ width:auto; }
+  .checkbox-row label{ margin:0; }
+
+  footer.bar{
+    position:fixed; bottom:0; left:0; right:0; background:var(--black); color:var(--cream-ink);
+    padding:16px 24px; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; z-index:20;
+  }
+  .btn{
+    font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:0.85rem; letter-spacing:0.03em; text-transform:uppercase;
+    padding:12px 24px; cursor:pointer; border:2px solid var(--cream-ink);
+  }
+  .btn-solid{ background:var(--gold); color:var(--black); border-color:var(--gold); }
+  .btn-outline{ background:transparent; color:var(--cream-ink); }
+  input[type=file]{ display:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Niklas Weber — Inhalte bearbeiten</h1>
+    <p>Kein Programmieren nötig · exportiert content.json</p>
+  </div>
+  <span class="status" id="status"></span>
+</header>
+
+<div class="wrap">
+
+  <div class="note">
+    <h3>So funktioniert's</h3>
+    <ol>
+      <li>Felder unten ausfüllen oder ändern (Texte, Zitate, Bücher, Presse, ...).</li>
+      <li>Für <em>kursiv</em> in Buch-Absätzen: Text in <code>*Sternchen*</code> setzen — wird automatisch kursiv.</li>
+      <li>Unten auf <strong>„Datei herunterladen"</strong> klicken — du bekommst <code>content.json</code>.</li>
+      <li>Diese Datei auf GitHub hochladen und die alte <code>content.json</code> ersetzen (Datei anklicken → Stift-Symbol „Edit" oder „Upload file" → Commit).</li>
+      <li>Die Seite lädt die neuen Inhalte automatisch beim nächsten Aufruf.</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    Schon mal bearbeitet? Lade deine aktuelle <code>content.json</code> hier, um weiterzuarbeiten:
+    <br><br>
+    <label for="fileLoad" class="add-btn" style="display:inline-block;">Datei laden</label>
+    <input type="file" id="fileLoad" accept="application/json">
+  </div>
+
+  <!-- HERO -->
+  <section class="block">
+    <h2>Header</h2>
+    <span class="hint">Name, Zeile darunter, Ticket-Stub</span>
+    <label for="h_kicker">Kleiner Vortext</label>
+    <input type="text" id="h_kicker">
+    <div class="row2">
+      <div><label for="h_name1">Name — Zeile 1</label><input type="text" id="h_name1"></div>
+      <div><label for="h_name2">Name — Zeile 2</label><input type="text" id="h_name2"></div>
+    </div>
+    <label for="h_subtitle">Untertitel (wird beim Laden getippt)</label>
+    <input type="text" id="h_subtitle">
+    <label for="h_stub">Ticket-Stub Text</label>
+    <input type="text" id="h_stub">
+  </section>
+
+  <!-- QUOTES -->
+  <section class="block">
+    <h2>Rotierende Zitate</h2>
+    <span class="hint">Wechseln sich im Header alle paar Sekunden ab</span>
+    <div id="quoteList"></div>
+    <button class="add-btn" onclick="addQuoteRow()">+ Zitat hinzufügen</button>
+  </section>
+
+  <!-- BOOKS -->
+  <section class="block">
+    <h2>Bücher</h2>
+    <span class="hint">Jedes Buch ist ein eigener Abschnitt auf der Seite, direkt nach dem Header</span>
+    <div id="bookList"></div>
+    <button class="add-btn" onclick="addBookRow()">+ Buch hinzufügen</button>
+  </section>
+
+  <!-- PRESS -->
+  <section class="block">
+    <h2>Aktuelles / Presse</h2>
+    <div id="pressList"></div>
+    <button class="add-btn" onclick="addPressRow()">+ Eintrag hinzufügen</button>
+  </section>
+
+  <!-- BLOG -->
+  <section class="block">
+    <h2>Blog</h2>
+    <label for="bl_tag">Label</label>
+    <input type="text" id="bl_tag">
+    <label for="bl_title">Titel</label>
+    <input type="text" id="bl_title">
+    <label for="bl_text">Beschreibung</label>
+    <textarea id="bl_text"></textarea>
+    <div class="row2">
+      <div><label for="bl_linkText">Link-Text</label><input type="text" id="bl_linkText"></div>
+      <div><label for="bl_linkUrl">Link-URL</label><input type="text" id="bl_linkUrl"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="block">
+    <h2>Über mich</h2>
+    <label for="a_text">Text</label>
+    <textarea id="a_text" style="min-height:110px;"></textarea>
+    <label for="a_sig">Signatur</label>
+    <input type="text" id="a_sig">
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block">
+    <h2>Kontakt</h2>
+    <label for="c_text">Text</label>
+    <textarea id="c_text"></textarea>
+    <div class="row2">
+      <div><label for="c_email">E-Mail</label><input type="text" id="c_email"></div>
+      <div><label for="c_note">Hinweiszeile</label><input type="text" id="c_note"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="block">
+    <h2>Footer</h2>
+    <label for="f_joke">Kleiner Spruch</label>
+    <input type="text" id="f_joke">
+    <label for="f_copyright">Copyright-Zeile</label>
+    <input type="text" id="f_copyright">
+    <div class="row2">
+      <div><label for="f_impressum">Impressum-URL</label><input type="text" id="f_impressum"></div>
+      <div><label for="f_datenschutz">Datenschutz-URL</label><input type="text" id="f_datenschutz"></div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="bar">
+  <button class="btn btn-outline" onclick="document.getElementById('fileLoad').click()">Datei laden</button>
+  <button class="btn btn-solid" onclick="downloadContent()">Datei herunterladen</button>
+</footer>
+
+<script>
+  const DEFAULT_CONTENT = {
+    hero:{ kicker:"Autor · Innsbruck, Tirol", name1:"Niklas", name2:"Weber", subtitle:"Romane mit, von und über Österreich.", stub:"2 Romane — erschienen" },
+    quotes:[
+      { q:"„Ein Überwachungsalbtraum mit WLAN-Anschluss.\"", attr:"— aus »Digitale Diktatur in Dösendorf«" },
+      { q:"„War ich der Einzige? Ja.\"", attr:"— Onkel Harry, »Die Hochzeit«" },
+      { q:"„Nicht geschönt. Nicht perfekt. Einfach – wie es ist.\"", attr:"— Lisa Wallner, »Die Hochzeit«" },
+      { q:"„Ja, war eh super, glaub ich.\"", attr:"— Thomas Gertl, »Die Hochzeit«" },
+      { q:"„Die ist fünfundneunzig. In dem Alter macht man nix mehr aus Versehen.\"", attr:"— Opa Herbert, »Die Hochzeit«" },
+      { q:"„Eine Dokumentation des schönsten Tages ihres Lebens – und des Tages, der tatsächlich stattgefunden hat.\"", attr:"— Klappentext, »Die Hochzeit«" }
+    ],
+    books:[
+      { id:"hochzeit", navLabel:"Hochzeit", sectionClass:"sec-wine", tag:"Neuestes Buch", cover:"images/die-hochzeit-cover.png", title:"Die Hochzeit", sub:"Ein Film. Ein Roman.",
+        paragraphs:["Ein Samstag im August. Standesamt, Kirche, Location, Heimweg. Kameramann Lukas Berger hat schon viele Hochzeiten gefilmt. Er weiß, wie man unsichtbar wird, wie man wartet, wie man den richtigen Moment erkennt.",
+                     "Thomas und Lisa wollten etwas Echtes. Dokumentarisch. *Damit wir es unseren Kindern zeigen können*, hat Thomas gesagt. *Den schönsten Tag unseres Lebens.*",
+                     "Lukas hat ja gesagt."],
+        orderUrl:"" },
+      { id:"doesendorf", navLabel:"Dösendorf", sectionClass:"sec-navy", tag:"Erster Roman", cover:"https://niklasweber.carrd.co/assets/images/image01.jpg?v=13c0be07", title:"Digitale Diktatur in Dösendorf", sub:"Ein Heimatroman über Technik, Effizienz und den Mut zum Chaos.",
+        paragraphs:["Willkommen in Dösendorf – einem charmant-verstaubten Nest voller grantiger Eigenbrötler, eigensinniger Bräuche und der besten Käsknödel weit und breit. Doch dann kommt Heidi. Und mit ihr: Digitalisierung. Vernetzung. Effizienz. Ordnung.",
+                     "Was als Fortschritt gefeiert wird, entpuppt sich bald als Überwachungsalbtraum mit WLAN-Anschluss. Plötzlich zählt nur noch das Optimum – und der Mensch bleibt auf der Strecke. Aber nicht mit Dösendorf.",
+                     "*Ein anarchisch-warmherziger Roman über smarte Systeme, sture Dorfbewohner und die wunderbare Unordnung des echten Lebens.*"],
+        orderUrl:"https://buchshop.bod.de/digitale-diktatur-in-doesendorf-niklas-weber-9783819246449" }
+    ],
+    press:[
+      { tag:"Presse", title:"Buchvorstellung auf meinbezirk.at", image:"https://niklasweber.carrd.co/assets/images/image04.jpg?v=13c0be07",
+        text:"Mein Roman wurde auf meinbezirk.at vorgestellt – und ich freue mich riesig darüber! In „Digitale Diktatur in Dösendorf\" treffen eigenwillige Dorfbewohner, österreichische Traditionen und moderne Technologie aufeinander. Im Mittelpunkt steht ein fiktives Dorf, das überraschend viel mit der Realität gemeinsam hat – und die Frage, wie KI unser Leben verändert.",
+        linkText:"→ Zum Artikel", linkUrl:"https://www.meinbezirk.at/innsbruck/c-freizeit/eigenwillige-bewohner-und-traditionen-treffen-auf-heidi_a8557606" },
+      { tag:"24. März — Lesung", title:"Lesung in der Sillgasse", image:"https://niklasweber.carrd.co/assets/images/image03.jpg?v=13c0be07",
+        text:"Am 24. März durfte ich eine Lesung in der Sillgasse halten. Gemeinsam mit den 6. Klassen entstanden spannende Gespräche rund ums Bücherveröffentlichen, darüber, was eigentlich „wirklich österreichisch\" ist, und natürlich auch darüber, wie sich KI sowohl im Alltag als auch in der Kunst auswirkt. Es waren zwei äußerst interessante Stunden – und ich freue mich schon sehr auf die nächste Lesung!",
+        linkText:"→ Zum Bericht", linkUrl:"https://bg-sillgasse.tsn.at/news/woche-des-vorlesens" }
+    ],
+    blog:{ tag:"Zweites Projekt", title:"Historisch betrachtet kritisch",
+      text:"Der Versuch, Geschichte unterhaltsam zu erzählen. Nicht vollständig. Nicht objektiv. Aber ehrlich interessiert. Keine wissenschaftlichen Abhandlungen, keine Fußnotenorgien – dafür Humor, Sarkasmus und historische Fehlentscheidungen. Wer alles todernst lesen möchte, ist hier falsch. Alle anderen sind richtig.",
+      linkText:"→ Zum Blog", linkUrl:"https://historischbetrachtetschwierig.substack.com/" },
+    about:{ text:"Ich bin Niklas Weber, geboren 2006 in Innsbruck und Absolvent einer HTL. Meine Geschichten wachsen aus dem Alltag – aus kleinen Beobachtungen, flüchtigen Momenten und leisen Gedanken. Was mir auffällt, findet oft später seinen Platz auf dem Papier. So entstehen Texte, die das Gewöhnliche hinterfragen und das Unscheinbare sichtbar machen.", sig:"— N. Weber" },
+    contact:{ text:"Bei Anfragen – Lesungen, Presse oder einfach ein Feedback zum Buch – können Sie sich gerne über E-Mail bei mir melden.", email:"deine-email-hier@beispiel.at", note:"Platzhalter — bitte durch deine echte Adresse ersetzen." },
+    footer:{ joke:"Analog geschrieben · digital gehostet.", copyright:"© 2026 Niklas Weber. Alle Rechte vorbehalten.", impressumUrl:"https://niklasweberimpressum.carrd.co/", datenschutzUrl:"https://niklasweberdatenschutz.carrd.co/" }
+  };
+
+  function setStatus(msg){ document.getElementById('status').textContent = msg; setTimeout(()=>{ if(document.getElementById('status').textContent===msg) document.getElementById('status').textContent=''; }, 3500); }
+  function escAttr(s){ return (s===undefined||s===null?'':String(s)).replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
+  function escHtml(s){ return (s===undefined||s===null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  // ---------- repeatable row builders ----------
+  function quoteRowHtml(item={}){
+    return `<div class="card-item">
+      <button class="remove" onclick="this.closest('.card-item').remove()">entfernen</button>
+      <label>Zitat</label>
+      <input type="text" class="qu_q" value="${escAttr(item.q)}">
+      <label>Quelle</label>
+      <input type="text" class="qu_attr" value="${escAttr(item.attr)}">
+    </div>`;
+  }
+  function addQuoteRow(item){ document.getElementById('quoteList').insertAdjacentHTML('beforeend', quoteRowHtml(item||{})); }
+
+  function bookRowHtml(b={}){
+    const paras = (b.paragraphs||[]).join('\n');
+    return `<div class="card-item">
+      <button class="remove" onclick="this.closest('.card-item').remove()">entfernen</button>
+      <div class="row3">
+        <div><label>ID (nur a-z, ohne Leerzeichen)</label><input type="text" class="b_id" value="${escAttr(b.id)}"></div>
+        <div><label>Nav-Kurzname</label><input type="text" class="b_navLabel" value="${escAttr(b.navLabel)}"></div>
+        <div><label>Farbe</label>
+          <select class="b_sectionClass">
+            <option value="sec-wine" ${b.sectionClass==='sec-wine'?'selected':''}>Bordeaux</option>
+            <option value="sec-navy" ${b.sectionClass==='sec-navy'?'selected':''}>Navy</option>
+            <option value="sec-black" ${b.sectionClass==='sec-black'?'selected':''}>Schwarz</option>
+            <option value="sec-orange" ${b.sectionClass==='sec-orange'?'selected':''}>Orange</option>
+          </select>
+        </div>
+      </div>
+      <label>Label (z.B. "Neuestes Buch")</label>
+      <input type="text" class="b_tag" value="${escAttr(b.tag)}">
+      <label>Titel</label>
+      <input type="text" class="b_title" value="${escAttr(b.title)}">
+      <label>Untertitel</label>
+      <input type="text" class="b_sub" value="${escAttr(b.sub)}">
+      <label>Cover — Bildpfad oder URL</label>
+      <input type="text" class="b_cover" value="${escAttr(b.cover)}">
+      <label>Text (ein Absatz pro Zeile — *Wort* für kursiv)</label>
+      <textarea class="b_paragraphs" style="min-height:120px;">${escHtml(paras)}</textarea>
+      <label>Bestell-Link (leer lassen, um den Button auszublenden)</label>
+      <input type="text" class="b_orderUrl" value="${escAttr(b.orderUrl)}">
+    </div>`;
+  }
+  function addBookRow(b){ document.getElementById('bookList').insertAdjacentHTML('beforeend', bookRowHtml(b||{})); }
+
+  function pressRowHtml(p={}){
+    return `<div class="card-item">
+      <button class="remove" onclick="this.closest('.card-item').remove()">entfernen</button>
+      <div class="row2">
+        <div><label>Label</label><input type="text" class="pr_tag" value="${escAttr(p.tag)}"></div>
+        <div><label>Titel</label><input type="text" class="pr_title" value="${escAttr(p.title)}"></div>
+      </div>
+      <label>Bild — URL</label>
+      <input type="text" class="pr_image" value="${escAttr(p.image)}">
+      <label>Text</label>
+      <textarea class="pr_text">${escHtml(p.text)}</textarea>
+      <div class="row2">
+        <div><label>Link-Text</label><input type="text" class="pr_linkText" value="${escAttr(p.linkText)}"></div>
+        <div><label>Link-URL</label><input type="text" class="pr_linkUrl" value="${escAttr(p.linkUrl)}"></div>
+      </div>
+    </div>`;
+  }
+  function addPressRow(p){ document.getElementById('pressList').insertAdjacentHTML('beforeend', pressRowHtml(p||{})); }
+
+  // ---------- populate form ----------
+  function populateForm(data){
+    document.getElementById('h_kicker').value = data.hero?.kicker || '';
+    document.getElementById('h_name1').value = data.hero?.name1 || '';
+    document.getElementById('h_name2').value = data.hero?.name2 || '';
+    document.getElementById('h_subtitle').value = data.hero?.subtitle || '';
+    document.getElementById('h_stub').value = data.hero?.stub || '';
+
+    document.getElementById('quoteList').innerHTML = '';
+    (data.quotes||[]).forEach(q=>addQuoteRow(q));
+
+    document.getElementById('bookList').innerHTML = '';
+    (data.books||[]).forEach(b=>addBookRow(b));
+
+    document.getElementById('pressList').innerHTML = '';
+    (data.press||[]).forEach(p=>addPressRow(p));
+
+    document.getElementById('bl_tag').value = data.blog?.tag || '';
+    document.getElementById('bl_title').value = data.blog?.title || '';
+    document.getElementById('bl_text').value = data.blog?.text || '';
+    document.getElementById('bl_linkText').value = data.blog?.linkText || '';
+    document.getElementById('bl_linkUrl').value = data.blog?.linkUrl || '';
+
+    document.getElementById('a_text').value = data.about?.text || '';
+    document.getElementById('a_sig').value = data.about?.sig || '';
+
+    document.getElementById('c_text').value = data.contact?.text || '';
+    document.getElementById('c_email').value = data.contact?.email || '';
+    document.getElementById('c_note').value = data.contact?.note || '';
+
+    document.getElementById('f_joke').value = data.footer?.joke || '';
+    document.getElementById('f_copyright').value = data.footer?.copyright || '';
+    document.getElementById('f_impressum').value = data.footer?.impressumUrl || '';
+    document.getElementById('f_datenschutz').value = data.footer?.datenschutzUrl || '';
+  }
+
+  // ---------- gather form ----------
+  function gatherForm(){
+    return {
+      hero:{
+        kicker: document.getElementById('h_kicker').value,
+        name1: document.getElementById('h_name1').value,
+        name2: document.getElementById('h_name2').value,
+        subtitle: document.getElementById('h_subtitle').value,
+        stub: document.getElementById('h_stub').value
+      },
+      quotes: Array.from(document.querySelectorAll('#quoteList .card-item')).map(row=>({
+        q: row.querySelector('.qu_q').value,
+        attr: row.querySelector('.qu_attr').value
+      })),
+      books: Array.from(document.querySelectorAll('#bookList .card-item')).map(row=>({
+        id: row.querySelector('.b_id').value.trim(),
+        navLabel: row.querySelector('.b_navLabel').value,
+        sectionClass: row.querySelector('.b_sectionClass').value,
+        tag: row.querySelector('.b_tag').value,
+        title: row.querySelector('.b_title').value,
+        sub: row.querySelector('.b_sub').value,
+        cover: row.querySelector('.b_cover').value,
+        paragraphs: row.querySelector('.b_paragraphs').value.split('\n').map(s=>s.trim()).filter(Boolean),
+        orderUrl: row.querySelector('.b_orderUrl').value
+      })),
+      press: Array.from(document.querySelectorAll('#pressList .card-item')).map(row=>({
+        tag: row.querySelector('.pr_tag').value,
+        title: row.querySelector('.pr_title').value,
+        image: row.querySelector('.pr_image').value,
+        text: row.querySelector('.pr_text').value,
+        linkText: row.querySelector('.pr_linkText').value,
+        linkUrl: row.querySelector('.pr_linkUrl').value
+      })),
+      blog:{
+        tag: document.getElementById('bl_tag').value,
+        title: document.getElementById('bl_title').value,
+        text: document.getElementById('bl_text').value,
+        linkText: document.getElementById('bl_linkText').value,
+        linkUrl: document.getElementById('bl_linkUrl').value
+      },
+      about:{
+        text: document.getElementById('a_text').value,
+        sig: document.getElementById('a_sig').value
+      },
+      contact:{
+        text: document.getElementById('c_text').value,
+        email: document.getElementById('c_email').value,
+        note: document.getElementById('c_note').value
+      },
+      footer:{
+        joke: document.getElementById('f_joke').value,
+        copyright: document.getElementById('f_copyright').value,
+        impressumUrl: document.getElementById('f_impressum').value,
+        datenschutzUrl: document.getElementById('f_datenschutz').value
+      }
+    };
+  }
+
+  function downloadContent(){
+    const data = gatherForm();
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'content.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setStatus('content.json heruntergeladen');
+  }
+
+  document.getElementById('fileLoad').addEventListener('change', (ev)=>{
+    const file = ev.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = ()=>{
+      try{
+        const data = JSON.parse(reader.result);
+        populateForm(data);
+        setStatus('Datei geladen: ' + file.name);
+      }catch(err){
+        setStatus('Konnte Datei nicht lesen — ist es eine gültige content.json?');
+      }
+    };
+    reader.readAsText(file);
+  });
+
+  fetch('content.json', {cache:'no-store'})
+    .then(r=>{ if(!r.ok) throw new Error('missing'); return r.json(); })
+    .then(data=>{ populateForm(data); setStatus('Aktuelle Inhalte geladen'); })
+    .catch(()=>{ populateForm(DEFAULT_CONTENT); });
+</script>
+
+</body>
+</html>
