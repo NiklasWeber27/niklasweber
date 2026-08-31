@@ -8,30 +8,66 @@
   },
   "quotes": [
     {
-      "q": "„Ein Überwachungsalbtraum mit WLAN-Anschluss.\"",
-      "attr": "— aus »Digitale Diktatur in Dösendorf«"
+      "q": "„Eh alles normal.\"",
+      "attr": "— Arno Oberberger, »Der Sheriff vom Gemeindebau«"
     },
     {
-      "q": "„War ich der Einzige? Ja.\"",
-      "attr": "— Onkel Harry, »Die Hochzeit«"
+      "q": "„Der Herr schläft nicht. Aber wenn doch, wach i’n halt auf.\"",
+      "attr": "— Franz Pinter, »Digitale Diktatur in Dösendorf«"
     },
     {
-      "q": "„Nicht geschönt. Nicht perfekt. Einfach – wie es ist.\"",
-      "attr": "— Lisa Wallner, »Die Hochzeit«"
+      "q": "„Des is ka Sudoku. Des is abartig! Pure Folter!\"",
+      "attr": "— Arno Oberberger, »Der Sheriff vom Gemeindebau«"
     },
     {
-      "q": "„Ja, war eh super, glaub ich.\"",
-      "attr": "— Thomas Gertl, »Die Hochzeit«"
+      "q": "„Na, des is was Schlimmeres – a Idee.\"",
+      "attr": "— Gundi Ratzinger, »Digitale Diktatur in Dösendorf«"
     },
     {
-      "q": "„Die ist fünfundneunzig. In dem Alter macht man nix mehr aus Versehen.\"",
-      "attr": "— Opa Herbert, »Die Hochzeit«"
+      "q": "„Jo, aufpassen is aus der Mode, oder wos?\"",
+      "attr": "— Arno Oberberger, »Der Sheriff vom Gemeindebau«"
     },
     {
-      "q": "„Eine Dokumentation des schönsten Tages ihres Lebens – und des Tages, der tatsächlich stattgefunden hat.\"",
-      "attr": "— Klappentext, »Die Hochzeit«"
+      "q": "„Grüß Gott, Dösendorf. Ich bin Heidi. Ich bin hier, um euch zu helfen.\"",
+      "attr": "— Heidi, »Digitale Diktatur in Dösendorf«"
+    },
+    {
+      "q": "„Du bist verrückt Mann… aber gut. Ich komm.\"",
+      "attr": "— Dino Mirković, »Der Sheriff vom Gemeindebau«"
+    },
+    {
+      "q": "„Wo isn das WLAN hier?\"",
+      "attr": "— Digitalisierungsminister, »Digitale Diktatur in Dösendorf«"
+    },
+    {
+      "q": "„Wenn man nix macht, passiert nix. Aber wenn man zu lang nix macht, passiert a was.\"",
+      "attr": "— Arno Oberberger, »Der Sheriff vom Gemeindebau«"
+    },
+    {
+      "q": "„Dösendorf is mehr als a Dorf. Es is a Pionierort!\"",
+      "attr": "— Bürgermeister Adi Fuchs, »Digitale Diktatur in Dösendorf«"
+    },
+    {
+      "q": "„Der Sheriff is jetzt offiziell im Dienst.\"",
+      "attr": "— Arno Oberberger, »Der Sheriff vom Gemeindebau«"
+    },
+    {
+      "q": "„Vielleicht meint er die neue Glocke vom Nachbardorf. Die is elektrisch.\"",
+      "attr": "— Annemarie, »Digitale Diktatur in Dösendorf«"
+    },
+    {
+      "q": "„Na, sicha. Des Essen war’s. Die Käsekrainer der Todesschlauch.\"",
+      "attr": "— Arno Oberberger, »Der Sheriff vom Gemeindebau«"
+    },
+    {
+      "q": "„Wennst vom Pfarrer nix verstehst, dann is es entweder g’scheit oder a Blödsinn.\"",
+      "attr": "— Dösendorfer Redensart, »Digitale Diktatur in Dösendorf«"
+    },
+    {
+      "q": "„A Kunde. Einfach umg’fallen. Und i sag’s gleich – der war kern’g’sund.\"",
+      "attr": "— Zither, »Der Sheriff vom Gemeindebau«"
     }
-  ],
+],
   "books": [
     {
       "id": "hochzeit",
