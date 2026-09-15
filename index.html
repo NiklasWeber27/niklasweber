@@ -151,7 +151,7 @@
       <p class="subtitle" id="typeSubtitle" data-text="Romane mit, von und über Österreich." data-bind-text="hero.subtitle"></p>
       <div class="stub" data-bind="hero.stub">2 Romane — erschienen</div>
       <nav id="mainNav">
-        <a href="#hochzeit">Hochzeit</a><span class="sep">/</span><a href="#doesendorf">Dösendorf</a><span class="sep">/</span><a href="#aktuelles">Aktuelles</a><span class="sep">/</span><a href="#blog">Blog</a><span class="sep">/</span><a href="#ueber-mich">Über mich</a><span class="sep">/</span><a href="#kontakt">Kontakt</a>
+        <a href="#sheriff">Sheriff</a><span class="sep">/</span><a href="#doesendorf">Dösendorf</a><span class="sep">/</span><a href="#aktuelles">Aktuelles</a><span class="sep">/</span><a href="#blog">Blog</a><span class="sep">/</span><a href="#ueber-mich">Über mich</a><span class="sep">/</span><a href="#kontakt">Kontakt</a>
       </nav>
     </div>
     <div class="hero-quote">
@@ -164,17 +164,18 @@
 </header>
 
 <div id="books-container">
-<section id="hochzeit" class="sec-wine">
+<section id="sheriff" class="sec-wine">
   <div class="wrap">
     <span class="tag">Neuestes Buch</span>
     <div class="figure">
-      <img src="images/die-hochzeit-cover.png" alt="Buchcover: Die Hochzeit">
+      <img src="images/der-sheriff-cover.png" alt="Buchcover: Der Sheriff vom Gemeindebau">
     </div>
-    <div class="buch-title">Die Hochzeit</div>
-    <div class="buch-sub">Ein Film. Ein Roman.</div>
-    <p>Ein Samstag im August. Standesamt, Kirche, Location, Heimweg. Kameramann Lukas Berger hat schon viele Hochzeiten gefilmt. Er weiß, wie man unsichtbar wird, wie man wartet, wie man den richtigen Moment erkennt.</p>
-    <p>Thomas und Lisa wollten etwas Echtes. Dokumentarisch. <em>Damit wir es unseren Kindern zeigen können</em>, hat Thomas gesagt. <em>Den schönsten Tag unseres Lebens.</em></p>
-    <p>Lukas hat ja gesagt.</p>
+    <div class="buch-title">Der Sheriff vom Gemeindebau</div>
+    <div class="buch-sub">Ein Wiener Schmäh-Krimi.</div>
+    <p>Arno Oberberger ist Frühpensionist, Wiener und zutiefst überzeugt, dass die Welt am besten funktioniert, wenn ihn niemand stört. Kaffee, Käsekrainer, ein Bier im Beisl – mehr braucht er nicht.</p>
+    <p>Bis der Nachbar Plachner mitten am Würstelstand tot umfällt. Angeblich Herzinfarkt. Arno glaubt kein Wort davon – und bastelt sich kurzerhand einen Sheriffstern aus Alufolie.</p>
+    <p><em>Ein Wiener Schmäh-Krimi mit Herz, Häme und einem Schuss Senf.</em></p>
+    <p><a href="#" target="_blank" rel="noopener">→ Buch bestellen</a></p>
   </div>
 </section>
 
@@ -370,8 +371,8 @@
     // --- hero quote rotation: jumps between lines from both books mid-glitch, like a signal switching channel ---
     const fallbackQuotes = [
       { q:'„Ein Überwachungsalbtraum mit WLAN-Anschluss."', attr:'— aus »Digitale Diktatur in Dösendorf«' },
-      { q:'„War ich der Einzige? Ja."', attr:'— Onkel Harry, »Die Hochzeit«' },
-      { q:'„Nicht geschönt. Nicht perfekt. Einfach – wie es ist."', attr:'— Lisa Wallner, »Die Hochzeit«' }
+      { q:'„Eh alles normal."', attr:'— Arno Oberberger, »Der Sheriff vom Gemeindebau«' },
+      { q:'„Der Sheriff is jetzt offiziell im Dienst."', attr:'— Arno Oberberger, »Der Sheriff vom Gemeindebau«' }
     ];
     const heroQuotes = (Array.isArray(quotesFromData) && quotesFromData.length) ? quotesFromData : fallbackQuotes;
     const qEl = document.getElementById('heroQuote');
