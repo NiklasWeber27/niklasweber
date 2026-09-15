@@ -70,17 +70,17 @@
 ],
   "books": [
     {
-      "id": "hochzeit",
-      "navLabel": "Hochzeit",
+      "id": "sheriff",
+      "navLabel": "Sheriff",
       "sectionClass": "sec-wine",
       "tag": "Neuestes Buch",
-      "title": "Die Hochzeit",
-      "sub": "Ein Film. Ein Roman.",
-      "cover": "images/die-hochzeit-cover.png",
+      "title": "Der Sheriff vom Gemeindebau",
+      "sub": "Ein Wiener Schmäh-Krimi.",
+      "cover": "images/der-sheriff-cover.png",
       "paragraphs": [
-        "Ein Samstag im August. Standesamt, Kirche, Location, Heimweg. Kameramann Lukas Berger hat schon viele Hochzeiten gefilmt. Er weiß, wie man unsichtbar wird, wie man wartet, wie man den richtigen Moment erkennt.",
-        "Thomas und Lisa wollten etwas Echtes. Dokumentarisch. *Damit wir es unseren Kindern zeigen können*, hat Thomas gesagt. *Den schönsten Tag unseres Lebens.*",
-        "Lukas hat ja gesagt."
+        "Arno Oberberger ist Frühpensionist, Wiener und zutiefst überzeugt, dass die Welt am besten funktioniert, wenn ihn niemand stört. Kaffee, Käsekrainer, ein Bier im Beisl – mehr braucht er nicht.",
+        "Bis der Nachbar Plachner mitten am Würstelstand tot umfällt. Angeblich Herzinfarkt. Arno glaubt kein Wort davon – und bastelt sich kurzerhand einen Sheriffstern aus Alufolie.",
+        "*Ein Wiener Schmäh-Krimi mit Herz, Häme und einem Schuss Senf.*"
       ],
       "orderUrl": ""
     },
